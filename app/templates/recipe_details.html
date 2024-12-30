@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}Details{% endblock %}
+{% block content %}
+<div class="recipe-details">
+    <h2>{{ item["food_name"] }}</h2>
+    
+    <ul>
+        <li>Fibre: {{ item["fibre_g"] }} g</li>
+        <li>Cholesterol: {{ item["cholesterol_mg"] }} mg</li>
+        <li>Free Sugar: {{ item["freesugar_g"] }} g</li>
+        <li>Sodium: {{ item["sodium_mg"] }} mg</li>
+        <li>Carbohydrates: {{ item["carb_g"] }} g</li>
+        <li>Energy: {{ item["energy_kcal"] }} kcal</li>
+        <li>Fat: {{ item["fat_g"] }} g</li>
+        <li>Protein: {{ item["protein_g"] }} g</li>
+        <li>Calcium: {{ item["calcium_mg"] }} g</li>
+        
+    </ul>
+</div>
+{% endblock %}
