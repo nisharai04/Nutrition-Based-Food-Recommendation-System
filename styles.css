@@ -1,0 +1,136 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+header {
+    
+    background-color: #4CAF50;
+    background-image: url(image/food.jpeg);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: white;
+    text-align: center;
+    padding: 1em;
+    
+    
+}
+
+main {
+    padding: 2em;
+}
+
+h1 {
+    color:#ddd;
+}
+h2 {
+    color: #174118;
+}
+
+form {
+    margin-bottom: 2em;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1em;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.error {
+    border: 2px solid red;
+}
+
+ul {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    flex: 0 0 30%; 
+    text-align: center;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+.recipe-details {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-details ul {
+    padding: 0;
+    margin: 0;
+}
+
+.recipe-details ul li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.recipe-details ul li:last-child {
+    border-bottom: none;
+}
+
+
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
+}

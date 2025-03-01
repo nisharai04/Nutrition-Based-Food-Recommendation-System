@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block title %}Food Recommendation{% endblock %}
+{% block content %}
+<h2>Provide Nutrition Details</h2>
+<form id="food-form" method="post" action="{{ url_for('main.index') }}"> 
+    <label for="fibre_g">Fibre (g):</label>
+    <input type="number" step="any" name="fibre_g" id="fibre_g" value="{{ fibre_g }}" required>
+
+    <label for="cholesterol_mg">Cholesterol (mg):</label>
+    <input type="number" step="any" name="cholesterol_mg" id="cholesterol_mg" value="{{ cholesterol_mg }}" required> 
+
+    <label for="freesugar_g">Free Sugar (g):</label>
+    <input type="number" step="any" name="freesugar_g" id="freesugar_g" value="{{ freesugar_g }}" required>
+
+    <label for="sodium_mg">Sodium (mg):</label>
+    <input type="number" step="any" name="sodium_mg" id="sodium_mg" value="{{ sodium_mg }}" required>
+
+    <label for="carb_g">Carbohydrates (g):</label>
+    <input type="number" step="any" name="carb_g" id="carb_g" value="{{ carb_g }}" required>
+
+    <label for="energy_kcal">Energy (kcal):</label>
+    <input type="number" step="any" name="energy_kcal" id="energy_kcal" value="{{ energy_kcal }}" required>
+
+    <label for="fat_g">Fat (g):</label>
+    <input type="number" step="any" name="fat_g" id="fat_g" value="{{ fat_g }}" required>
+
+    <label for="protein_g">Protein (g):</label>
+    <input type="number" step="any" name="protein_g" id="protein_g" value="{{ protein_g }}" required>
+
+    <button type="submit">Get Recommendations</button>
+</form>
+
+{% if error %}
+    <p class="error">{{ error }}</p>
+{% endif %}
+
+
+{% if recommendations is not none %}  <h2>Recommendations</h2>
+    <ul>
+        {% for index, row in recommendations.iterrows() %}
+            <li>
+                <div class="col-md-4">   
+                <a href="{{ url_for('main.details', food_id=index) }}">{{ row['food_name'] }}</a> 
+                {% if row['image_url'] %}
+                <div class="col-m-4"> 
+                    <img src="{{ row['image_url'] }}" alt="{{ row['food_name'] }}" style="max-width: 100%; height: auto;">
+                </div>
+             </div>
+                {% endif %}
+            </li>
+        {% endfor %} 
+    </ul>
+{% else %}
+    <p>No recommendations found. Please try entering different nutrient values.</p>
+{% endif %}
+{% endblock %}
